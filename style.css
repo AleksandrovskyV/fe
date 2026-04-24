@@ -95,7 +95,7 @@ flex-direction: column;
 flex-wrap: wrap; 
 }
 
-.topmost { z-index: 9999; }
+.topmost { z-index: 9998; }
 
 .lock {
 pointer-events: none !important;
@@ -123,7 +123,7 @@ flex-direction: column;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-z-index: 9999;
+z-index: 9998;
 }
 
 .oWrapper {  /* box inside fs */
@@ -152,7 +152,7 @@ gap: 20px;
 #overlayDrop {
 background: rgba(0, 0, 0, 0.5);
 display: none;
-z-index: 9999;
+z-index: 9998;
 pointer-events: none;
 }
 
@@ -571,7 +571,7 @@ border: 2px solid rgb(80 80 80 / 50%); /* выделяем место для bor
 box-shadow: 0 0 0 3px var(--btnfill);
 -webkit-user-drag: element; 
 pointer-events: auto;
-z-index: 9999;
+z-index: 9998;
 transition:
     color 0.25s ease,  
     background 0.25s ease, 
@@ -987,6 +987,6 @@ border-left: 2px solid white !important;
         text-align: center;
         font-family: system-ui, -apple-system, sans-serif;
         font-size: 24px;
-        z-index: 9998;
+        z-index: 9999;
         padding: 20px;
 }
