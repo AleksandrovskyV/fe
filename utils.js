@@ -91,9 +91,6 @@ const easeCustomAlt = (t, startInf = 0.4, endInf = 0.9, p = 3) => {
 
   const st = solveT(t);
 
-  // А вот здесь применяем твой Power!
-  // Вместо жесткого st^3 используем Math.pow(st, p)
-  // Это позволит делать "вход в плавность" еще более экстремальным
   const u = 1 - st;
   return 3 * u * Math.pow(st, p - 1) + Math.pow(st, p);
 };
