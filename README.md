@@ -41,7 +41,7 @@ SideEffect?  - Восстановление подхода prototypo [`*`](https
 - Construct Serif-Class...
 <br>
 
-![StemConstr](./dev/docs/StemConstrUpdateSite.jpg)
+![StemConstr](./assets/img/StemConstrUpdateSite.jpg)
 
 <br><br>
 
