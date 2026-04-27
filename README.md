@@ -36,15 +36,6 @@ SideEffect?  - Восстановление подхода prototypo [`*`](https
 
 <br><br>
 
-### FutureTask:
-
-- Construct Serif-Class...
-<br>
-
-![StemConstr](./assets/img/StemConstrUpdateSite.jpg)
-
-<br><br>
-
 ### UsedLibs<br>
 Текущий public build содержит только минифицированные библиотеки, для стабильности:<br>
 
@@ -91,5 +82,14 @@ Cтанет доступна по порту, что вбил<br>
 npm instal (сборка зависимостей)<br>
 npm run build (сборка проекта)<br>
 npm run dist (minjs)
+
+<br><br>
+
+### FutureTask:
+
+- Construct Serif-Class...
+<br>
+
+![StemConstr](./assets/img/StemConstrUpdateSite.jpg)
 
 <br><br><br>
