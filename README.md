@@ -72,8 +72,7 @@ Cтанет доступна по порту, что вбил<br>
 
 + Учебник по типографике [link](https://www.youtube.com/watch?v=RGe8OI9pNXY)
 
-<br><br><br>
-
+<br><br>
 
 ###  SpecialNote:
 
