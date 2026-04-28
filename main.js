@@ -8975,21 +8975,44 @@ async function loadReadme() {
         showIframeFallback();
         return; 
     }
+    
+    const docs = [
+        { id: 'readmeAbout', path: './README.md' },
+        { id: 'readmeBible', path: './assets/docs/bible_ru.md' }
+    ];
 
-    try {
-        const response = await fetch('README.md');
-        const markdown = await response.text();
-        
-        // Превращаем Markdown в HTML
-        const htmlContent = marked.parse(markdown);
-        document.getElementById('readmeContent').innerHTML = htmlContent;
+    const btnContainer = document.getElementById('rBtnsReadme');
+    const contentWrapper = document.getElementById('readmeContent');
 
-    } catch (err) {
-        //console.error("Не удалось загрузить README:", err);
-        showIframeFallback();
+    const unhide = (targetId) => {
+        btnContainer.querySelectorAll('button').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.target === targetId);
+        });
+
+        Array.from(contentWrapper.children).forEach(div => {
+            div.hidden = (div.id !== targetId);
+        });
+    };
+
+    for (const doc of docs) {
+        try {
+            const response = await fetch(doc.path);
+            const markdown = await response.text();
+            const element = document.getElementById(doc.id);
+            
+            if (element) {
+                element.innerHTML = marked.parse(markdown);
+            }
+        } catch (err) {
+            //console.error(`Ошибка загрузки ${doc.id}:`, err);
+            showIframeFallback();
+        }
     }
-}
 
+    btnContainer.querySelectorAll('button').forEach(btn => {
+        btn.onclick = () => unhide(btn.dataset.target);
+    });
+}
 loadReadme();
 
 
