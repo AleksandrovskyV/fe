@@ -5957,7 +5957,9 @@ resetSplineBtn.onclick = () => {
         resetSpline();
         // нужен новый метод
     }else{
-        // нужен новый метод
+        // нужен новый метод 
+        updateLogIndices();
+        updateTracking(gCanvasObjects, true, { x: 0, y: 0 });
     }
     
     renderGlobalCanvas();
