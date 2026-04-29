@@ -444,12 +444,18 @@ let animationActive = true;
 
 
 let tracking  = 0.75;
-/*
-let spOffset = 0;
-if(index === 0) spOffset = 18;
-if(index === 1) spOffset = 8;
-if(index === 2) spOffset = -8;
-*/
+
+function selectAllObjectInCanvas(){
+    //console.log("selectAllObjectInCanvas")
+    
+    selectedObjects = [];
+            
+    gCanvasObjects.forEach(obj => {
+        selectedObjects.push(obj);
+    });
+
+    renderGlobalCanvas();
+}
 
 function autoPushOnCanvas() {
 
@@ -8837,6 +8843,12 @@ window.onkeydown = (e) => {
     if (pressedCtrl && isF && !pressedShift) {
         e.preventDefault(); // убирает всплывалку 
         callSearchBar();
+        return safeReturn()
+    }
+
+    if (pressedCtrl && cod === "KeyA" && !pressedShift) {
+        e.preventDefault(); // убирает всплывалку 
+        selectAllObjectInCanvas();
         return safeReturn()
     }
 
