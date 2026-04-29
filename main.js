@@ -433,6 +433,7 @@ const systemGlyphsNames = systemGlyphs.map(g => g.name);
 
 ////////////////////////////////////////////////// INIT
 
+let tracking  = 0.75;
 
 let targetHeight = 90;
 let targetYPosition = null;
@@ -442,8 +443,6 @@ let tempScale = 0.1;
 let animationLetters = [];
 let animationActive = true;
 
-
-let tracking  = 0.75;
 
 function selectAllObjectInCanvas(){
     //console.log("selectAllObjectInCanvas")
@@ -455,6 +454,42 @@ function selectAllObjectInCanvas(){
     });
 
     renderGlobalCanvas();
+}
+
+function skipAllAnimation(mode = "simple"){
+
+    animationLetters = [];
+    animationActive = false;
+    console.log("skipAllAnimation", animationLetters)
+
+
+    if(startwindow || mode === "dragFromMain"){
+        const baseIcon = canvasSwitchBtn.querySelector("img");
+        baseIcon.src = "./assets/svg/free.svg" 
+
+        hardTurnSpline = true;
+    }
+
+    charAnim = 1;
+    totalSkip = true
+    startCloseAnim = 0;
+    animationActive = false; 
+    
+    if(mode === "errorAutopush"){
+        
+        startTextRow.hidden = true;
+
+        const startWindow = document.getElementById("startWindow");
+        const mainComment = document.getElementById("mainComment");
+
+        startWindow.style.padding = 0;
+        mainComment.style.padding = 0;
+        mainComment.style.margin = '0';
+        mainComment.innerHTML = `... drag Glyph or reference image <text style="color: rgba(0, 0, 0, 0.0);">...</text>`; // for D
+    }
+
+
+    //if(gCanvasMode = "free" // align
 }
 
 function autoPushOnCanvas() {
@@ -657,9 +692,6 @@ function updateElementsDatas(){
 
     }
 }
-
-
-
 
 
 function closeStartWindow() {
@@ -6337,43 +6369,7 @@ window.addEventListener("dragleave", (e) => {
     }
 });
 
-function skipAllAnimation(mode = "simple"){
 
-    animationLetters = [];
-    animationActive = false;
-    console.log("skipAllAnimation", animationLetters)
-
-
-    if(startwindow || mode === "dragFromMain"){
-        const baseIcon = canvasSwitchBtn.querySelector("img");
-        baseIcon.src = "./assets/svg/free.svg" 
-
-        hardTurnSpline = true;
-    }
-
-    charAnim = 1;
-    totalSkip = true
-    startCloseAnim = 0;
-    animationActive = false; 
-    
-    if(mode === "errorAutopush"){
-        
-        startTextRow.hidden = true;
-
-        const startWindow = document.getElementById("startWindow");
-        const mainComment = document.getElementById("mainComment");
-
-        startWindow.style.padding = 0;
-        mainComment.style.padding = 0;
-        mainComment.style.margin = '0';
-        mainComment.innerHTML = `... drag Glyph or reference image <text style="color: rgba(0, 0, 0, 0.0);">...</text>`; // for D
-    }
-
-
-    //if(gCanvasMode = "free" // align
-
-    
-}
 
 function handleFontFile(file) {
     if (!file) return false;
