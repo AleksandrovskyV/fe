@@ -8888,7 +8888,7 @@ window.onkeydown = (e) => {
         return safeReturn();     
     }
     else if (cod === "KeyU") recordShapeSequence(true);
-    else if (cod === "KeyA" || cod === "Enter" || cod === "Space") callSwitchCanvasMode();
+    else if (cod === "KeyD" || cod === "Enter" || cod === "Space") callSwitchCanvasMode();
     else if (cod === "KeyS") callGlyphInfoMode(); //callGlobalCanvas();
     else if (cod === "KeyP" || cod === "KeyB" || cod === "KeyH") callBezierMode();
     else if (cod === "KeyF"){
