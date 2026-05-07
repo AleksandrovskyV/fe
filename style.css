@@ -617,8 +617,6 @@ border-color: rgb(140 140 140 / 0.9);
 color: black;
 }
 
-
-
 .tile svg{
 width:80%;
 height:80%;
@@ -628,15 +626,10 @@ height:80%;
 display:block;
 }
 
-
-
-
-
 #edButtonsRow{
 padding: 20px;
 align-items: center;
 }
-
 
 /* custom scrollbar */
 ::-webkit-scrollbar {
