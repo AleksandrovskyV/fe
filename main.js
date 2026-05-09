@@ -3699,7 +3699,7 @@ function createTile(item, container, forceActive = false) {
 
             stack.appendChild(clone);
         });
-
+сщт
         // Бейдж со счетчиком (всегда поверх всех)
         if (selectedTiles.length > 1) {
             const badge = document.createElement('div');
@@ -8798,6 +8798,12 @@ window.onkeydown = (e) => {
     const isZ = cod === 'KeyZ';
     const isY = cod === 'KeyY';
     const isF = cod === 'KeyF';
+
+    if (key === "Escape") {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = "https://vsky.space";
+    }
 
     if(startwindow){
         const skipbtns = (cod === "KeyF" || cod === "Space");
